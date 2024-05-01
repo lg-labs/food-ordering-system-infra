@@ -8,7 +8,7 @@
 > 👋 The K8s files to deploy all Food Ordering System.
 >
 
-From **Lg Pentagon** or **lg5**! Get [Lg5-Spring][4] to develop μ-services faster.
+From **Lg Pentagon** or **lg5**! Get [Lg5-Spring][3] to develop μ-services faster.
 
 For more information, check this pages https://lufgarciaqu.medium.com.
 <h1></h1>
@@ -40,9 +40,8 @@ Install 1/1: Create topics manually!
 
 ```bash
 make kafka-exec
-
 ```
-_Create topics manually! [create-topics.sh](create-topics.sh)_
+_Create topics manually with [create-topics.sh](create-topics.sh)_
 
 Install 1/1: Install Postgres!
 ```bash
@@ -94,9 +93,9 @@ The MIT License (MIT). Please see [License][LIC] for more information.
 [0]: https://img.shields.io/badge/LgLabs-community-blue?style=flat-square
 [1]: https://lufgarciaqu.medium.com
 [2]: https://img.shields.io/badge/license-MIT-green?style=flat-square
-
+[3]: https://github.com/lg-labs-pentagon/lg5-spring
 [4]: https://github.com/confluentinc/cp-helm-charts
-[5]: https://github.com/lg-labs/food-ordering-system
+[5]: https://github.com/lg-labs/food-ordering-system/tree/main/order-service
 
 
 [LIC]: LICENSE
