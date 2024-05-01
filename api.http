@@ -1,0 +1,104 @@
+### Customer Service API
+
+POST localhost:8184/customers
+Content-Type: application/json
+
+{
+  "customerId": "d215b5f8-0249-4dc5-89a3-51fd148cfb41",
+  "username": "lguser1",
+  "firstName": "lg1",
+  "lastName": "lg1"
+}
+
+
+### Scenario 1: Happy Path
+POST localhost:8181/orders
+Content-Type: application/json
+
+{
+  "customerId": "d215b5f8-0249-4dc5-89a3-51fd148cfb41",
+  "restaurantId": "d215b5f8-0249-4dc5-89a3-51fd148cfb45",
+  "address": {
+    "street": "street_1",
+    "postalCode": "1000AB",
+    "city": "Amsterdam"
+  },
+  "price": 200.00,
+  "items": [
+    {
+      "productId": "d215b5f8-0249-4dc5-89a3-51fd148cfb48",
+      "quantity": 1,
+      "price": 50.00,
+      "subTotal": 50.00
+    },
+    {
+      "productId": "d215b5f8-0249-4dc5-89a3-51fd148cfb48",
+      "quantity": 3,
+      "price": 50.00,
+      "subTotal": 150.00
+    }
+  ]
+}
+
+### Scenario 2: Product unavailable
+POST localhost:8181/orders
+Content-Type: application/json
+
+{
+  "customerId": "d215b5f8-0249-4dc5-89a3-51fd148cfb41",
+  "restaurantId": "d215b5f8-0249-4dc5-89a3-51fd148cfb45",
+  "address": {
+    "street": "street_1",
+    "postalCode": "1000AB",
+    "city": "Amsterdam"
+  },
+  "price": 25.00,
+  "items": [
+    {
+      "productId": "d215b5f8-0249-4dc5-89a3-51fd148cfb47",
+      "quantity": 1,
+      "price": 25.00,
+      "subTotal": 25.00
+    }
+  ]
+}
+
+### Scenario 2: insufficient credit
+POST localhost:8181/orders
+Content-Type: application/json
+
+{
+  "customerId": "d215b5f8-0249-4dc5-89a3-51fd148cfb41",
+  "restaurantId": "d215b5f8-0249-4dc5-89a3-51fd148cfb45",
+  "address": {
+    "street": "street_1",
+    "postalCode": "1000AB",
+    "city": "Amsterdam"
+  },
+  "price": 550.00,
+  "items": [
+    {
+      "productId": "d215b5f8-0249-4dc5-89a3-51fd148cfb48",
+      "quantity": 1,
+      "price": 50.00,
+      "subTotal": 50.00
+    },
+    {
+      "productId": "d215b5f8-0249-4dc5-89a3-51fd148cfb48",
+      "quantity": 10,
+      "price": 50.00,
+      "subTotal": 500.00
+    }
+  ]
+}
+
+
+
+
+### Get Order satus
+< {%
+    const longUUID = "bea59040-bc80-4841-85a1-b66c1dca673d"
+    request.variables.set("orderId", longUUID)
+%}
+# GET localhost:8181/orders/{{orderId}}
+GET localhost:8181/orders/d2474342-9a9d-4917-bdf3-b3f3871044e7
