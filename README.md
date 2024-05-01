@@ -25,30 +25,30 @@ For more information, check this pages https://lufgarciaqu.medium.com.
 ### You can ...
 Using `makefile`
 
-Install 1/1: Install kafka.
+Install 1/5: Create the kafka cluster.
 
 ```bash
 make install-kafka 
 ```
 
-Install 1/1: Install kafka client.
+Install 2/5: Create a kafka client.
 ```bash
 make kafka-up 
 ```
 
-Install 1/1: Create topics manually!
+Install 3/5: Create topics manually!
 
 ```bash
 make kafka-exec
 ```
 _Create topics manually with [create-topics.sh](create-topics.sh)_
 
-Install 1/1: Install Postgres!
+Install 4/5: Deploy a Postgres!
 ```bash
 make db-up
 ```
 
-Install 1/1: Deploying the food ordering system components!
+Install 5/5: Deploying the food ordering system components!
 ```bash
 make app-up
 ```
