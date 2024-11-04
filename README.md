@@ -1,4 +1,4 @@
-# 🛠️ K8s to Food Ordering System μ-service
+    # 🛠️ K8s to Food Ordering System μ-service
 [![lg-labs][0]][1]
 [![License][2]][LIC]
 
@@ -48,7 +48,12 @@ Install 4/5: Deploy a Postgres!
 make db-up
 ```
 
-Install 5/5: Deploying the food ordering system components!
+Install 5/5: Deploying the food ordering system components!     
+Before, you need a volume (PVC)
+```bash
+make vol-up
+```
+After..
 ```bash
 make app-up
 ```
@@ -73,7 +78,10 @@ make uninstall-kafka
 # removing Kafka Client
 make kafka-down
 ```
-
+```bash
+# removing PVC
+make vol-down
+```
 
 ## 📚Contents
 

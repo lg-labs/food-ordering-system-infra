@@ -1,5 +1,5 @@
 ### Customer Service API
-
+# @name Customer
 POST localhost:8184/customers
 Content-Type: application/json
 
@@ -10,8 +10,8 @@ Content-Type: application/json
   "lastName": "lg1"
 }
 
-
 ### Scenario 1: Happy Path
+# @name Happy Path
 POST localhost:8181/orders
 Content-Type: application/json
 
@@ -39,8 +39,16 @@ Content-Type: application/json
     }
   ]
 }
+> {%
+    client.test("Request executed successfully", function () {
+        client.assert(response.status === 200, "Response status is not 200");
+        client.assert(response.body["orderTrackingId"] != null, "Response message is not valid");
+        client.global.set("orderTrackingId", response.body.orderTrackingId);
+    });
+%}
 
 ### Scenario 2: Product unavailable
+# @name  Product unavailable
 POST localhost:8181/orders
 Content-Type: application/json
 
@@ -63,7 +71,12 @@ Content-Type: application/json
   ]
 }
 
+> {%
+    client.global.set("orderTrackingId", response.body.orderTrackingId);
+%}
+
 ### Scenario 2: insufficient credit
+# @name  insufficient credit
 POST localhost:8181/orders
 Content-Type: application/json
 
@@ -92,13 +105,10 @@ Content-Type: application/json
   ]
 }
 
-
-
+> {%
+    client.global.set("orderTrackingId", response.body.orderTrackingId);
+%}
 
 ### Get Order satus
-< {%
-    const longUUID = "bea59040-bc80-4841-85a1-b66c1dca673d"
-    request.variables.set("orderId", longUUID)
-%}
-# GET localhost:8181/orders/{{orderId}}
-GET localhost:8181/orders/d2474342-9a9d-4917-bdf3-b3f3871044e7
+# @name Tracking
+GET localhost:8181/orders/{{orderTrackingId}}

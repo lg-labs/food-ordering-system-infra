@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: filebeat-deployment
+spec:
+  selector:
+    matchLabels:
+      app: filebeat
+  template:
+    metadata:
+      labels:
+        app: filebeat
+    spec:
+      containers:
+        - name: filebeat
+          image: your-filebeat-image
+          volumeMounts:
+            - mountPath: /usr/share/filebeat/data
+              name: filebeat-storage
+      volumes:
+        - name: filebeat-storage
+          persistentVolumeClaim:
+            claimName: pvc-data
