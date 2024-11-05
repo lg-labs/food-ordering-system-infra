@@ -15,6 +15,10 @@ For more information, check this pages https://lufgarciaqu.medium.com.
 
 # Using K8s, Helm and [cp-helm-charts](helm%2Fcp-helm-charts)
 
+> Important: for the First Time: you need to change the version in the file:   
+> _helm/cp-helm-charts/charts/cp-zookeeper/templates/poddisruptionbudget.yaml_ has an invalid version.  
+> Replace `apiVersion: policy/v1beta1` by  `apiVersion: policy/v1` 
+
 [More details][4]
 
 
