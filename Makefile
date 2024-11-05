@@ -8,6 +8,9 @@ kafka-down:
 kafka-up:
 	kubectl apply -f kafka-client.yml
 
+kafka-cp-topics:
+	kubectl cp create-topics.sh kafka-client:/kafka-client-storage
+
 kafka-exec: # require to create topics here manually!
 	kubectl exec -it kafka-client -- /bin/bash
 
