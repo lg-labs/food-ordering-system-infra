@@ -14,3 +14,5 @@ spec:
         - sh
         - -c
         - "exec tail -f /dev/null"
+  volumes:
+    - name: kafka-client-storage
