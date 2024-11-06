@@ -129,8 +129,6 @@ spec:
               value: "gke-confluent-kafka-cp-kafka-headless:9092"
             - name: KAFKA-CONFIG_SCHEMA-REGISTRY-URL
               value: "http://gke-confluent-kafka-cp-schema-registry:8081"
-            - name: LOG_PATH
-              value: /tmp/logs
           resources:
             limits:
               cpu: "500m"
