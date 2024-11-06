@@ -63,7 +63,7 @@ spec:
   scaleTargetRef:
     kind: Deployment
     name: order-deployment
-    apiVersion: app/v1
+    apiVersion: apps/v1
   minReplicas: 2
   maxReplicas: 4
   metrics:
@@ -138,7 +138,7 @@ spec:
   scaleTargetRef:
     kind: Deployment
     name: payment-deployment
-    apiVersion: app/v1
+    apiVersion: apps/v1
   minReplicas: 2
   maxReplicas: 4
   metrics:
@@ -213,7 +213,7 @@ spec:
   scaleTargetRef:
     kind: Deployment
     name: restaurant-deployment
-    apiVersion: app/v1
+    apiVersion: apps/v1
   minReplicas: 2
   maxReplicas: 4
   metrics:
@@ -288,7 +288,7 @@ spec:
   scaleTargetRef:
     kind: Deployment
     name: customer-deployment
-    apiVersion: app/v1
+    apiVersion: apps/v1
   minReplicas: 2
   maxReplicas: 4
   metrics:
