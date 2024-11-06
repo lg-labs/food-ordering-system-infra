@@ -25,11 +25,6 @@ spec:
               value: "gke-confluent-kafka-cp-kafka-headless:9092"
             - name: KAFKA-CONFIG_SCHEMA-REGISTRY-URL
               value: "http://gke-confluent-kafka-cp-schema-registry:8081"
-            - name: LOG_PATH
-              value: /tmp/logs
-          volumeMounts:
-            - mountPath: /tmp/logs
-              name: tmp-storage
           resources:
             limits:
               cpu: "500m"
@@ -37,10 +32,6 @@ spec:
             requests:
               cpu: "200m"
               memory: "256Mi"
-      volumes:
-        - name: tmp-storage
-          persistentVolumeClaim:
-            claimName: pvc-data
 
 ---
 apiVersion: v1
@@ -86,11 +77,6 @@ spec:
               value: "gke-confluent-kafka-cp-kafka-headless:9092"
             - name: KAFKA-CONFIG_SCHEMA-REGISTRY-URL
               value: "http://gke-confluent-kafka-cp-schema-registry:8081"
-            - name: LOG_PATH
-              value: /tmp/logs
-          volumeMounts:
-            - mountPath: /tmp/logs
-              name: tmp-storage
           resources:
             limits:
               cpu: "500m"
@@ -98,10 +84,6 @@ spec:
             requests:
               cpu: "200m"
               memory: "256Mi"
-      volumes:
-        - name: tmp-storage
-          persistentVolumeClaim:
-            claimName: pvc-data
 
 ---
 apiVersion: v1
@@ -149,9 +131,6 @@ spec:
               value: "http://gke-confluent-kafka-cp-schema-registry:8081"
             - name: LOG_PATH
               value: /tmp/logs
-          volumeMounts:
-            - mountPath: /tmp/logs
-              name: tmp-storage
           resources:
             limits:
               cpu: "500m"
@@ -159,10 +138,6 @@ spec:
             requests:
               cpu: "200m"
               memory: "256Mi"
-      volumes:
-        - name: tmp-storage
-          persistentVolumeClaim:
-            claimName: pvc-data
 
 ---
 apiVersion: v1
@@ -208,11 +183,6 @@ spec:
               value: "gke-confluent-kafka-cp-kafka-headless:9092"
             - name: KAFKA-CONFIG_SCHEMA-REGISTRY-URL
               value: "http://gke-confluent-kafka-cp-schema-registry:8081"
-            - name: LOG_PATH
-              value: /tmp/logs
-          volumeMounts:
-            - mountPath: /tmp/logs
-              name: tmp-storage
           resources:
             limits:
               cpu: "500m"
@@ -220,10 +190,6 @@ spec:
             requests:
               cpu: "200m"
               memory: "256Mi"
-      volumes:
-        - name: tmp-storage
-          persistentVolumeClaim:
-            claimName: pvc-data
 
 ---
 apiVersion: v1
